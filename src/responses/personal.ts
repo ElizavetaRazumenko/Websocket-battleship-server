@@ -3,12 +3,12 @@ import { players } from '../db/db';
 import { isPlayerExist } from '../utils/isPlayerExist';
 import { Player } from '../db/types';
 
-type Params = {
+type UserData = {
   name: string;
   password: string;
 };
 
-export const regPlayer = (ws: WebSocket, { name, password }: Params) => {
+export const regPlayer = (ws: WebSocket, { name, password }: UserData) => {
   if (!isPlayerExist(name, password)) {
     players.push({ name, password, wins: 0 });
   }
