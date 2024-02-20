@@ -1,20 +1,20 @@
-import WebSocket from 'ws';
+import crypto from 'crypto';
 import { players } from '../db/db';
 import { isPlayerExist } from '../utils/isPlayerExist';
-import { Player } from '../db/types';
+import { IdentificationalWebSocket, Player } from '../db/types';
 
 type UserData = {
   name: string;
   password: string;
 };
 
-export const regPlayer = (ws: WebSocket, { name, password }: UserData) => {
+export const regPlayer = (ws: IdentificationalWebSocket, { name, password }: UserData) => {
   if (!isPlayerExist(name, password)) {
-    players.push({ name, password, wins: 0 });
+    players.push({ id: ws.id, name, password, wins: 0 });
   }
 
   const player = players.find(
-    (player) => player.name === name && player.password === password
+    (player) => player.id === ws.id
   ) as Player;
   const responseData = {
     type: 'reg',
