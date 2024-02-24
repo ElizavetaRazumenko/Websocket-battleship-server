@@ -1,6 +1,6 @@
 import { httpServer } from './src/http_server/index';
 import dotenv from 'dotenv';
-import './src/ws/ws-server';
+import './src/ws/wsServer';
 
 dotenv.config();
 
