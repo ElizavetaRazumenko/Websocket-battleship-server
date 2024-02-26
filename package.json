@@ -4,7 +4,7 @@
     "description": "Template for the WebSocket remote control task",
     "main": "index.ts",
     "scripts": {
-        "start": "node ./src/index.ts",
+        "start": "npx nodemon",
         "start:dev": "npx nodemon",
         "lint": "npx eslint ./src",
         "format": "npx eslint ./src --fix"
