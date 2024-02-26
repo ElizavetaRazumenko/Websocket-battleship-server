@@ -1,15 +1,15 @@
 {
     "name": "websocket_task",
     "version": "1.0.0",
-    "description": "Template for the WebSocket remote control task",
+    "description": "Websocket battleship server",
     "main": "index.ts",
     "scripts": {
-        "start": "node ./src/index.ts",
+        "start": "npx nodemon",
         "start:dev": "npx nodemon",
         "lint": "npx eslint ./src",
         "format": "npx eslint ./src --fix"
     },
-    "author": "Misha Kozarev",
+    "author": "Elizaveta Razumenko",
     "keywords": [],
     "license": "ISC",
     "devDependencies": {
